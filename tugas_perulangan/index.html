@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hitung Ganjil dan Genap</title>
+</head>
+<body>
+  <h2>Program Ganjil dan Genap</h2>
+
+  <label>Masukkan angka:</label><br>
+  <input type="number" id="inputAngka" placeholder="Contoh: 10">
+  <button onclick="cekGanjilGenap()">Proses</button>
+
+  <div id="hasil"></div>
+
+  <script>
+    function cekGanjilGenap() {
+      var angka = parseInt(document.getElementById('inputAngka').value);
+      var hasilDiv = document.getElementById('hasil');
+      hasilDiv.innerHTML = '';
+
+      // Logika validasi input
+      if (isNaN(angka) || angka < 1) {
+        hasilDiv.innerHTML = "Masukkan angka yang lebih dari 0.";
+        return;
+      }
+
+      var hasil = "Hasil:<br>";
+      
+      // Perulangan dan percabangan
+      for (var i = 1; i <= angka; i++) {
+        if (i % 2 === 0) {
+          hasil += i + " adalah Genap<br>";
+        } else {
+          hasil += i + " adalah Ganjil<br>";
+        }
+      }
+
+      hasilDiv.innerHTML = hasil;
+    }
+  </script>
+</body>
+</html>
